@@ -1,12 +1,54 @@
-<!DOCTYPE html>
+<!DOCTYPE HTML>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Timeline of Major Events in the Eastern Orthodox Church</title>
+  <style>
+    body, html {
+      font-family: arial, sans-serif;
+      font-size: 11pt;
+    }
+
+    .vis-item.vis-background.negative {
+      background-color: rgba(255, 0, 0, 0.2);
+    }
+  </style>
+
+  <script src="./src/vis-timeline-graph2d.min.js"></script>
+  <link href="./src/vis-timeline-graph2d.min.css" rel="stylesheet" type="text/css" />
+  
 </head>
 <body>
-    <h1>Welcome to the timeline!</h1>
+
+<h1>A Timeline of Major Events in the Eastern Orthodox Church</h1>
+
+<div id="visualization"></div>
+
+<script>
+  var items = new vis.DataSet([
+    {id: 'A', content: 'Period A', start: '2014-01-16', end: '2014-01-22', type: 'background'},
+    {id: 'B', content: 'Period B', start: '2014-01-25', end: '2014-01-30', type: 'background', className: 'negative'},
+    {id: 'C', content: 'Period C', start: '2014-01-31', end: '2014-02-28', type: 'background'},
+    {id: 1, content: 'item 1<br>start', start: '2014-01-23'},
+    {id: 2, content: 'item 2', start: '2014-01-18'},
+    {id: 3, content: 'item 3', start: '2014-01-21'},
+    {id: 4, content: 'item 4', start: '2014-01-19', end: '2014-01-24'},
+    {id: 5, content: 'item 5', start: '2014-01-28', type:'point'},
+    {id: 6, content: 'item 6', start: '2014-01-26'}
+  ]);
+
+  var container = document.getElementById('visualization');
+  var options = {
+    start: '2014-01-10',
+    end: '2014-02-10',
+    editable: true
+  };
+
+  var timeline = new vis.Timeline(container, items, options);
+
+</script>
 </body>
 </html>
+
