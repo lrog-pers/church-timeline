@@ -28,22 +28,34 @@
 
 <script>
   var items = new vis.DataSet([
-    {id: 'A', content: 'Period A', start: '2014-01-16', end: '2014-01-22', type: 'background'},
-    {id: 'B', content: 'Period B', start: '2014-01-25', end: '2014-01-30', type: 'background', className: 'negative'},
-    {id: 'C', content: 'Period C', start: '2014-01-31', end: '2014-02-28', type: 'background'},
-    {id: 1, content: 'item 1<br>start', start: '2014-01-23'},
-    {id: 2, content: 'item 2', start: '2014-01-18'},
-    {id: 3, content: 'item 3', start: '2014-01-21'},
-    {id: 4, content: 'item 4', start: '2014-01-19', end: '2014-01-24'},
-    {id: 5, content: 'item 5', start: '2014-01-28', type:'point'},
-    {id: 6, content: 'item 6', start: '2014-01-26'}
+    {id: 'NT', content: 'New Testament Era', start: '0001-01-01', end: '0030-01-01', type: 'background'},
+    {id: 'Apostolic', content: 'Apostolic Era', start: '0030-01-01', end: '0100-01-01', type: 'background', className: 'negative'},
+    {id: 'AnteNicene', content: 'Ante-Nicene Era', start: '0100-01-01', end: '0325-01-01', type: 'background'},
+    {id: 'Nicene', content: 'Nicene Era', start: '0325-01-01', end: '0451-01-01', type: 'background', className: 'negative'},
+    {id: 'Byzantine', content: 'Byzantine Era', start: '0451-01-01', end: '0843-01-01', type: 'background'},
+    {id: 'LateByz', content: 'Late Byzantine Era', start: '0843-01-01', end: '1054-01-01', type: 'background', className: 'negative'},
+    {id: 'Post-Rome', content: 'Post-Roman Schism', start: '1054-01-01', end: '1453-01-01', type: 'background'},
+    {id: 'Post-Imper', content: 'Post-Imperial Era', start: '1453-01-01', end: '1821-01-01', type: 'background', className: 'negative'},
+    {id: 'Modern', content: 'Modern Era', start: '1821-01-01', end: '1917-01-01', type: 'background'},
+    {id: 'Communist', content: 'Communist Era', start: '1917-01-01', end: '1991-01-01', type: 'background', className: 'negative'},
+    {id: 'Post-Comm', content: 'Post-Communist Era', start: '1991-01-01', end: '2022-01-01', type: 'background'},
+    {id: 1, content: "Assumption of Moses, Jewish apocrypha written.", start: '0001-01-01'},
+    {id: 2, content: "Apostle Peter founds See of Antioch.", start: '0034-01-01'},
+    {id: 3, content: "Martyrdom of Ignatius of Antioch; crucifixion of Apostle Symeon, second Bp. of Jerusalem.", start: '0107-01-01'},
+    {id: 4, content: "First Ecumenical Council held in Nicea, condemning Arianism, setting the Paschalion, and issuing the first version of the Nicene Creed.", start: '0325-01-01'},
+    {id: 5, content: "Fourth Ecumenical Council meets at Chalcedon, condemning Eutychianism and Monophysitism, affirming doctrine of two perfect and indivisible but distinct natures in Christ, and recognizing Church of Jerusalem as patriarchate;", start: '0451-01-01'},
+    {id: 6, content: "Cardinal Humbert excommunicates Michael Cerularius, patriarch of Constantinople, a major centerpoint in the formation of the Great Schism between East and West; First Letter of Michael Cerularius to Peter of Antioch.", start: '1054-01-01'},
+    {id: 7, content: "Gutenberg makes first printed Bible.", start: '1453-01-01'},
+    {id: 8, content: "Metr. Germanos of Patra declares Greek independence on Day of Annunciation (March 25), also Kyriopascha; martyrdom of Patr. Gregory V of Constantinople, Abp. Kyprianos of Cyprus, and Abp. Gerasimos of Crete in retaliation.", start: '1821-01-01'},
+    {id: 9, content: "Bolshevik Revolution throws Church of Russia into chaos, effectively stranding the fledgling Russian Orthodox mission in America; restoration of Moscow Patriarchate with Tikhon as patriarch; British forces capture Jerusalem from Ottoman Empire; Church of Georgia's autocephaly restored de facto by political chaos in Russia; Balfour Declaration proclaims British support for the 'establishment in Palestine of a national home for the Jewish people'; Belogorsky St. Nicholas Orthodox Missionary Monastery Cathedral (Perm Krai, Russia) is consecrated as the largest cathedral in the Urals, but is soon captured by the Red Army.", start: '1917-01-01'},
+    {id: 10, content: "Soviet Union collapses, ending Cold War; representatives of Eastern and Oriental Orthodox Churches meet in Chambesy, Switzerland, discussing relations with World Council of Churches; Ruthenian Byzantine rite Catholic Church in Transcarpathia was restored as a separate entity from Ukrainian Greek Catholic Church based in Galicia, having about 23% of Transcarpathia's parishes compared to 60% of the Orthodox total there; Greek Orthodox Archdiocese of Italy and Exarchate of Southern Europe is created; death of Episcopal priest Robert Elwin Terwilliger, especially known for his efforts to reunite Anglican and Orthodox Christians, having served on the Episcopal Church's Council on Eastern Churches (1969-91), and the International Anglican Theological Commission for Joint Doctrinal Discussion with the Orthodox Churches (1971-91).", start: '1991-01-01'}
   ]);
 
   var container = document.getElementById('visualization');
   var options = {
-    start: '2014-01-10',
-    end: '2014-02-10',
-    editable: true
+    start: '0001-01-01',
+    end: '2022-01-01',
+    editable: false
   };
 
   var timeline = new vis.Timeline(container, items, options);
